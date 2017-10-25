@@ -1,0 +1,399 @@
+/* Custom CSS for Optio by Erun Ruby 2017 */
+
+/* VARIABLES AND MIXINS */
+
+/* Colors */
+$darkgray: #223843;
+$lightgray: #6b717e;
+$lightergray: #eeeff0;
+$white: #eff1f3;
+$blue: #5982a8;
+$peach: #e5beac;
+
+/* Font Stacks */
+$body: 'Open Sans', sans-serif;
+$headlines: 'Montserrat', sans-serif;
+
+/* Mixins */
+@mixin breakpoint($point) {
+  @if $point == xlarge {
+    @media (min-width: 90em) { @content; }
+  }
+  @else if $point == large {
+    @media (min-width: 60em) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: 45em) { @content; }
+  }
+  @else if $point == small {
+    @media (min-width: 38em)  { @content; }
+  }
+}
+
+body {
+    color: $lightgray;
+    font-weight: 300;
+}
+
+a {
+    font-weight: 400;
+}
+
+/* Top Navigation */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    display: none;
+}
+
+nav li img {
+    display: none;
+}
+
+@media screen and (min-width: 64em) {
+    nav li {
+        display: inline-block;
+        width: 19.7%;
+        text-align: center;
+    }
+}
+
+nav li a {
+    display: block;
+    color: $white;
+    text-align: center;
+    padding: 1em .25em;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: $peach;
+    text-decoration: none;
+}
+
+nav li img.nav-logo {
+    height: 55px;
+}
+
+.main-nav,f
+.main {
+    position: relative;
+}
+
+.main-nav {
+    background: transparent;
+    z-index: 150;
+    margin-bottom: -80px;
+
+}
+
+header,
+.main-nav-scrolled {
+    background: $darkgray;
+    color: $white;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    animation: fadeIn .5s ease-in 1 forwards;
+}
+
+.main-nav-scrolled a {
+    color: $white;
+}
+
+.main-nav-scrolled a:hover {
+    color: $peach;
+}
+
+.main-nav-scrolled img {
+    display: inline-block;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Hero */
+
+.hero-container {
+    margin: auto;
+    width: 1000px;
+    max-width: 90%;
+}
+
+.hero-cover {
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    color: $white;
+    transition: all .2s;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.hero-cover .cover-logo {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 8rem;
+    width: 12rem;
+    margin-left: -6rem;
+}
+
+@media (min-width: 64em) {
+    .hero-cover .cover-logo {
+        width: 16rem;
+        margin-left: -8rem;
+        top: 13rem;
+    }
+}
+
+.hero-cover .scroll-link {
+    position: absolute;
+    bottom: 1rem;
+    display: block;
+    left: 50%;
+    width: 3rem;
+    margin-left: -1.5rem;
+    
+}
+
+.hero-cover .scroll-link:hover,
+.hero-cover .scroll-link:focus {
+    animation: point-down 1s infinite;
+}
+
+.hero-cover .hero-content {
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
+.hero-cover .hero-content .hero-title {
+    margin-top: 75px;
+    color: $blue;
+    font-family: $body;
+    text-align: center;
+    padding-bottom: 2rem;
+    transition: all .2s;
+    font-size: 1.75em;
+    line-height: 1.125em;
+    font-weight: 600;
+    // text-shadow: 2px 2px 10px #0033a0;
+}
+
+.hero-cover .hero-content img {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    margin-bottom:10px;
+}
+
+.hero-cover .hero-content h2 {
+    color: $peach;
+    font-size: 1.125em;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+.hero-cover .hero-content p {
+    color: $white;
+}
+
+.hero-cover .hero-content .btn {
+    margin-top:20px;
+}
+
+@media (min-width: 45em) {
+    .hero-cover .hero-content .hero-title {
+        font-size: 2em;
+        line-height: 1.125em;
+    }
+    .hero-cover .hero-content img {
+    width: 275px;
+    }
+
+    .hero-cover .hero-content h2 {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 60em) {
+    .hero-cover .hero-content .hero-title {
+        margin-top: 100px;
+        font-size: 2.5em;
+        line-height: 1.25em;
+    }
+    .hero-cover .hero-content img {
+    width: 300px;
+    }
+    .hero-cover .hero-content h2 {
+        font-size: 1.5em;
+    }
+}
+
+@keyframes point-down {
+    0%,
+    50%,
+    100% {
+        transform: translateY(-10%);
+    }
+    
+    25%,
+    75% {
+        transform: translateY(30%);
+    }
+}
+
+/* Backgrounds */
+.gradient {
+    background: linear-gradient(0deg, #00A5B5 25%, #0033A0 75%);
+}
+.gradient-with-bg {
+    background: url('../imgs/rsa2017-bg-rain-reverse-30.png') 0px -50px repeat-x, linear-gradient(0deg, #00A5B5 25%, #0033A0 75%);
+}
+
+.white-with-bg {
+    background:  url('../imgs/infosec17-bg-mountains-bottom.png') center 120% no-repeat, $white;
+}
+
+@media screen and (min-width: 45em) {
+    
+}
+
+/* Sections */
+section.row {
+    min-height: none;
+    padding-top: 2em;
+}
+
+@media screen and (min-width: 45em) {
+    section.row {
+    min-height: 450px;
+    padding-top: 6em;
+    }
+}
+
+/* Footer */
+footer {
+    background: $blue;
+}
+footer p {
+    margin: 1em;
+    color: $white;
+}
+
+footer a {
+    color: $peach;
+}
+
+/*Containers*/
+div.circle-white {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: $white;
+    border: 3px solid $lightgray;
+    min-width: 1em;
+    border-radius: 50%;
+    vertical-align: text-top;
+    max-width: 500px;
+}
+div.circle-white:before {
+    content: '';
+    float: left;
+    width: auto;
+    padding-bottom: 100%;
+}
+div.circle-content {
+    position: relative;
+}
+div.circle-content h2,
+div.circle-content p {
+    padding: 0 2em;
+}
+div.box-white {
+    background: #fff;
+    border: 3px solid $blue;
+    padding: 1em;
+}
+
+/*Headings*/
+h1, h2, h3 {
+    font-family: $headlines;
+}
+
+h2 {
+    color: $blue;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+h3 {
+    color: $lightgray;
+}
+
+/*Images*/
+.img-circle {
+    border-radius: 50%;
+    border: 3px solid $lightgray;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Custom Styles */
+ul.social {
+    list-style-type: none;
+    text-align:center;
+    padding: 0;
+}
+ul.social li {
+    display: inline;
+}
+
+ul.social li a:hover{
+    text-decoration: none;
+}
+
+.social svg {
+    fill: $white;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.social svg:hover {
+    fill: $peach;
+}
+
+@media (min-width: 60em) {
+    .social svg {
+        width: 3em;
+        height: 3em;
+    }
+}
+
+.top-content {
+    margin-top: 4em;
+}
+
+@media (min-width: 45em) {
+    .top-content {
+    margin-top: 0;
+    }
+}

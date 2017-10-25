@@ -1,0 +1,6 @@
+{
+  "sourcemaps" : "false",
+  "autoprefixer" : {
+    "browsers" : "Last 2 Versions"
+  }
+}
